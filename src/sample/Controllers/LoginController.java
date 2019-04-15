@@ -3,7 +3,7 @@ package sample.Controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +36,14 @@ public class LoginController implements Initializable {
     }
 
     public void printHello(ActionEvent event){
-        System.out.println("Nie ma jeszcze bazy danych!");
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/bazabaza", "root", "");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from klient");
+            while(rs.next()){
+                System.out.println(rs.getString(4));
+            }
+        }catch(Exception e){System.out.println(e);}
     }
 }
