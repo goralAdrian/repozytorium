@@ -28,20 +28,20 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0" />
+                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0" onAction="#lol"/>
                         <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0" />
                         <Button layoutX="345.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0" />
                     </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-      <TextField layoutX="28.0" layoutY="78.0" promptText="Marka" />
-      <TextField layoutX="28.0" layoutY="112.0" promptText="Model" />
-      <TextField layoutX="28.0" layoutY="144.0" promptText="Rodzaj" />
-      <TextField layoutX="28.0" layoutY="177.0" promptText="Rocznik" />
-      <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" />
-      <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" />
-      <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" />
+      <TextField layoutX="28.0" layoutY="78.0" promptText="Marka" id="marka"/>
+      <TextField layoutX="28.0" layoutY="112.0" promptText="Model" id="model"/>
+      <TextField layoutX="28.0" layoutY="144.0" promptText="Rodzaj" id="rodzaj"/>
+      <TextField layoutX="28.0" layoutY="177.0" promptText="Rocznik" id="rocznik"/>
+      <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" id="paliwo"/>
+      <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" id="przebieg"/>
+      <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" id="cena"/>
       <TableView layoutX="192.0" layoutY="79.0" prefHeight="308.0" prefWidth="494.0">
         <columns>
           <TableColumn prefWidth="93.0" text="Marka" />
