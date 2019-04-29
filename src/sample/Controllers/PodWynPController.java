@@ -27,7 +27,5 @@ public class PodWynPController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/wypozyczeniePracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-
-
-
 }
+

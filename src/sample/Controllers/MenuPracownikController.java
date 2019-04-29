@@ -21,8 +21,10 @@ public String model(){
     return model;
 }
 
-    public void lol(){
-        System.out.println(model());
+    public void lol(String marka){
+    String x;
+    x = marka;
+    System.out.println(x);
     }
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
@@ -75,7 +77,7 @@ public String model(){
         {
             String InsertQuery = "INSERT INTO samochod VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(InsertQuery);
-            stmt.setInt(1, 2);
+            stmt.setInt(1, 32432);
             stmt.setString(2, "Fiat");
             stmt.setString(3, "Uno");
             stmt.setString(4, "Hatchback");

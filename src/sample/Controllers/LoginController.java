@@ -39,10 +39,29 @@ public class LoginController implements Initializable {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/bazabaza", "root", "");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from klient");
-            while(rs.next()){
-                System.out.println(rs.getString(4));
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO klient VALUES(?,?,?,?,?,?,?,?)");
+            stmt.setInt(1,1);
+            stmt.setString(2,"adik");
+            stmt.setString(3,"adik");
+            stmt.setString(4,"Jan");
+            stmt.setString(5,"Kowalski");
+            stmt.setString(6,"01.01.1999");
+            stmt.setString(7,"Sanok");
+            stmt.setFloat(8,12345678912F);
+            stmt.executeUpdate();
+            PreparedStatement stmt2 = con.prepareStatement("INSERT INTO pracownik VALUES(?,?,?,?,?,?,?)");
+            stmt2.setInt(1,1);
+            stmt2.setInt(2,1);
+            stmt2.setString(3,"adik");
+            stmt2.setString(4,"adik");
+            stmt2.setString(5,"Jan");
+            stmt2.setString(6,"Kowalski");
+            stmt2.setFloat(7, 12345678912F);
+            stmt2.executeUpdate();
+            ResultSet rs = stmt2.executeQuery("select * from administrator");
+            while(rs.next())
+            {
+                System.out.println("Pomyslnie dodano rekordy");
             }
         }catch(Exception e){System.out.println(e);}
     }
